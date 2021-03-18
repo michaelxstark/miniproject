@@ -45,7 +45,7 @@ function outputData(person) {
     row.classList.add('actor');
   }
   // Add a class to Austrians
-  if ((new RegExp(/1945/gi)).test(person.birthyear)) {
+  if ((new RegExp(/195[\d]/gi)).test(person.birthyear)) {
     row.classList.add('1945');
   }
   // Add a class to Auto*
