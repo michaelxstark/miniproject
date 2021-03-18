@@ -55,7 +55,6 @@ button {
 }
 
 table, th, td {
-  border: 1px solid black;
   border-radius: 50px;
   text-align: center;
   border-style: inset;
@@ -64,5 +63,4 @@ table, th, td {
 
 table {
   margin-top: 25px;
-  width: 100%;
 }
