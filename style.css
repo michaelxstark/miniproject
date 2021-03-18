@@ -54,7 +54,7 @@ button {
   background: linear-gradient(to right, azure, cornsilk);
 }
 
-table, th, td {
+th, td {
   border-radius: 50px;
   text-align: center;
   border-style: inset;
