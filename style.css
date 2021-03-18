@@ -63,5 +63,6 @@ table, th, td {
 }
 
 table {
-  margin-top: 20px;
+  margin-top: 25px;
+  width: 100%;
 }
