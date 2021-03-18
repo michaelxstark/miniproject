@@ -21,6 +21,9 @@ button {
 .yellowButton{
   background-color: yellow;
 }
+.white{
+  background-color: white;
+}
 
 table, th, td {
   border: 0.5px solid black;
