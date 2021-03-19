@@ -10,18 +10,18 @@
   </head>
   <body>
     <button type="button" class='back'><a href="index.html">back</a></button>
-    <p> While going through the tasks on how to clean the data from Wikipedia I realised,
-      <br>that after the completion of step two there where people missing in the list. </p>
-    <p> I couldn't wrap my head around how that could happen since I'm not too familiar with backreference <br>
+    <p> While going through the tasks on how to clean the data from Wikipedia I realised,</p>
+    <p>that after the completion of step two there where people missing in the list. </p>
+    <p> I couldn't wrap my head around how that could happen since I'm not too familiar with backreference
     in regex. </p>
-    <p>But since I had some time yesterday and a great amount of fun in the course over all, <br>
-    I took a closer look at the regex and found the thing, that let people from the list go missing. </p>
-    <p> Since the regex is always referencing to the two stars at the beginnig of the lines that don't have a seperate date -
-      <br> since two or more people died on that specific day - it starts overwriting lines when it gets executed the second <br>
-      (or third I can't remember correctly right now) time. I couldn't solve the problem with regex alone, so I tried a solution in <br>
-    python which looks like this and which works to substitue steps 2 and 3 in the cleaning of the data from Wikipedia. <br>
-    (Since I'm using a code prettifier, the &ndash gets displayed as the actual single character <br>
-    not the string of characters as I had it in the original code. I also prepared the data so that &ndash == –.)</p>
+    <p>But since I had some time yesterday and a great amount of fun in the course over all, </p>
+    <p>I took a closer look at the regex and found the thing, that let people from the list go missing. </p>
+    <p>Since the regex is always referencing to the two stars at the beginnig of the lines that don't have a seperate date -
+    <p>since two or more people died on that specific day - it starts overwriting lines when it gets executed the second </p>
+    <p>(or third I can't remember correctly right now) time. I couldn't solve the problem with regex alone, so I tried a solution in </p>
+    <p>python which looks like this and which works as substitution to steps 2 and 3 in the cleaning of the data from Wikipedia. </p>
+    <p>(Since I'm using a code prettifier, the &ndash gets displayed as the actual single character</p>
+    <p>not the string of characters as I had it in the original code. I also prepared the data so that &ndash == –.)</p>
     <div class="codebit">
     <pre>
       <code class="python">
