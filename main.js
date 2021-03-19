@@ -1,6 +1,6 @@
 // The below code fetches the .json data using a HTTP GET request
 // Define our data source as JSON file
-var sourceURL = 'data/deaths.json';
+var sourceURL = 'data/deathsupdate.json';
 // Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 fetch(sourceURL)
   .then(function (response) {
@@ -44,17 +44,21 @@ function outputData(person) {
   if ((new RegExp(/actor|actress/gi)).test(person.profession)) {
     row.classList.add('actor');
   }
-  // Add a class to Austrians
+  // Add a class to 1945
   if ((new RegExp(/195[\d]/gi)).test(person.birthyear)) {
     row.classList.add('1945');
   }
-  // Add a class to Auto*
+  // Add a class to Authors
   if ((new RegExp(/author/gi)).test(person.profession)) {
     row.classList.add('auto');
   }
-  // Add a class to Auto*
+  // Add a class to Artists
   if ((new RegExp(/artist/gi)).test(person.profession)) {
     row.classList.add('artist');
+  }
+  // Add a class to Austrians
+  if ((new RegExp(/austria/gi)).test(person.profession)) {
+    row.classList.add('austrian');
   }
 
 }

@@ -53,6 +53,9 @@ button {
 .white{
   background: linear-gradient(to right, azure, cornsilk);
 }
+.nButton{
+  background: linear-gradient(to right, firebrick, white);
+}
 
 th, td {
   border-radius: 50px;
