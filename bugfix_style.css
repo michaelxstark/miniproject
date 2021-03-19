@@ -1,0 +1,26 @@
+@font-face {
+      src: url(NCS_Rogueland.ttf);
+      font-family: NCS_Rogueland;
+}
+
+
+body {
+  padding: 20px 30px 30px 30px;
+  font-family: NCS_Rogueland;
+  background-color: #F8F8FF;
+  color: black;
+  line-height: 10px;
+  letter-spacing: 2px;
+
+}
+
+br
+{   content: "A" !important;
+    display: block !important;
+    margin-bottom: 1.25em !important;
+}
+
+.codebit{
+  line-height: 15px;
+  letter-spacing: 2px;
+}

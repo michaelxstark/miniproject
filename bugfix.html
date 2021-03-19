@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>bugfix in data cleaning</title>
+    <meta name="description" content="This is where you can describe what a page is for indexers and search engines">
+    <meta name="author" content="Michael Stark">
+    <link rel="stylesheet" type="text/css" href="bugfix_style.css" />
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
+  </head>
+  <body>
+    <p> While going through the tasks on how to clean the data from Wikipedia I realised,
+      <br>that after the completion of step two there where people missing in the list. </p>
+    <p> I couldn't wrap my head around how that could happen since I'm not too familiar with backreference <br>
+    in regex. </p>
+    <p>But since I had some time yesterday and a great amount of fun in the course over all, <br>
+    I took a closer look at the regex and found the thing, that let people from the list go missing. </p>
+    <p> Since the regex is always referencing to the two stars at the beginnig of the lines that don't have a seperate date -
+      <br> since two or more people died on that specific day - it starts overwriting lines when it gets executed the second <br>
+      (or third I can't remember correctly right now) time. I couldn't solve the problem with regex alone, so I tried a solution in <br>
+    python which looks like this and which works to substitue steps 2 and 3 in the cleaning of the data from Wikipedia. <br>
+    (Since I'm using a code prettifier, the &ndash gets displayed as the actual single character not the string of characters as I had it in the original code)</p>
+    <div class="codebit">
+    <pre>
+      <code class="python">
+        import re
+        import sys
+
+        s = sys.stdin
+        so = sys.stdout
+        xs = s.readlines()
+        xss = ' '
+        xsss = xss.join(xs)
+        y = re.findall("\* \[+\w+ \d+\]+\n", xsss)
+        d = 0
+        clean = ''
+        for i in range(len(xs)):
+            if '**' not in xs[i] and '&ndash;' not in xs[i]:
+                if i == 0:
+                    d = 0
+                else:
+                    d += 1
+            elif "**" in xs[i]:
+                x = re.sub("\*{2} ", y[d].strip('\n') + " &ndash; ", xs[i])
+                clean += x
+            else:
+                clean += xs[i]
+        so.write(clean)
+      </code>
+    </pre>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </body>
+</html>
